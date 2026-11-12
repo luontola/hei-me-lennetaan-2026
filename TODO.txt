@@ -5,6 +5,7 @@ Hosting
 - [ ] Add a GitHub Actions workflow (.github/workflows/pages.yml) that publishes the site/ directory.
       GitHub Pages "Deploy from a branch" can only serve / or /docs, not site/.
 - [ ] In the repository settings, set Pages > Source to "GitHub Actions".
+- [ ] Use a custom domain.
 
 Content (site/config.js)
 - [ ] Set the title of each game.
@@ -20,9 +21,10 @@ Google Form
 - [ ] Do NOT turn on "Collect email addresses". Anyone with the link can read the responses sheet.
 - [ ] If a question is renamed, update CONFIG.sheet.columns in site/config.js.
       If a field is replaced, get its new entry ID with "Get pre-filled link" and update CONFIG.form.
+- [ ] After submit, link back to the site.
 
 Google Sheet
-- [ ] Add the header "Hylätty" in the first empty column to the right of the form columns.
+- [x] Add the header "Hylätty" in the first empty column to the right of the form columns.
       Rows with any text in that column are hidden from the leaderboards.
 - [ ] Keep the sheet shared as "Anyone with the link: Viewer".
 - [ ] Delete the test rows (e.g. "Test, Peli 1, 123").
