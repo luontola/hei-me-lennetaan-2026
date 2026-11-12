@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Hei me lennetään!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <script src="config.js" defer></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+<div class="page">
+
+    <header class="site-header">
+        <div class="topbar">
+            <span>LÄHDÖT · DEPARTURES</span>
+            <div class="user-bar">
+                <span class="user-name" id="user-name" hidden></span>
+                <button type="button" class="link-button" id="login-button" hidden>Kirjaudu</button>
+                <button type="button" class="link-button" id="logout-button" hidden>Kirjaudu ulos</button>
+            </div>
+        </div>
+        <div class="hero">
+            <img src="assets/poster.webp" alt="Prinsessa ja putkimies jännittyneinä lentokoneen ohjaamossa" width="1537"
+                 height="1023">
+            <div class="hero-fade" aria-hidden="true"></div>
+            <h1>Hei me lennetään!</h1>
+        </div>
+    </header>
+
+    <main>
+        <p class="intro">Pelaa, kirjaa tuloksesi ja nouse tulostaululle. Jokaisessa pelissä lasketaan sinun paras
+            tuloksesi.</p>
+
+        <section class="board" aria-label="Illan pelit">
+            <div class="board-head">
+                <span>ILLAN LÄHDÖT</span>
+                <span class="badge">BOARDING</span>
+            </div>
+            <div class="games" id="games"></div>
+            <p class="status" id="status" role="status">Ladataan tuloksia…</p>
+        </section>
+    </main>
+
+</div>
+
+<template id="game-template">
+    <article class="game">
+        <div class="game-image"></div>
+        <div class="game-body">
+            <div class="game-label"></div>
+            <h2 class="game-title"></h2>
+            <dl class="game-facts">
+                <div>
+                    <dt>PELIMUOTO</dt>
+                    <dd class="game-mode"></dd>
+                </div>
+                <div>
+                    <dt>TASO</dt>
+                    <dd class="game-level"></dd>
+                </div>
+            </dl>
+            <p class="game-description"></p>
+            <div class="leaderboard">
+                <div class="leaderboard-head">TULOSTAULU</div>
+                <ol class="leaderboard-list"></ol>
+                <p class="leaderboard-note" hidden></p>
+                <button type="button" class="link-button leaderboard-toggle" hidden></button>
+            </div>
+            <button type="button" class="button submit-button">Lähetä tulos</button>
+        </div>
+    </article>
+</template>
+
+<dialog class="name-dialog" id="name-dialog" aria-labelledby="name-dialog-title">
+    <form id="name-form">
+        <span class="dialog-label">TARKASTUSKORTTI · BOARDING PASS</span>
+        <h2 id="name-dialog-title">Kuka lentää?</h2>
+        <label for="name-input">Kirjoita nimesi. Sillä korostetaan tuloksesi tulostaululla, ja se täytetään valmiiksi
+            tuloslomakkeeseen.</label>
+        <input id="name-input" name="name" required maxlength="40" autocomplete="nickname">
+        <div class="dialog-buttons">
+            <button type="button" class="link-button" id="name-cancel">Peruuta</button>
+            <button type="submit" class="button">Jatka</button>
+        </div>
+    </form>
+</dialog>
+</body>
+</html>
